@@ -43,27 +43,28 @@ function convert() {
     const resultElement = document.getElementById('result');
 
     if (numberInput === "") {
-        resultElement.textContent = "-";
+        resultElement.innerHTML = "-";
         return;
     }
 
     const regex = new RegExp(`^[0-9A-Fa-f]+$`);
     if (!regex.test(numberInput)) {
-        resultElement.textContent = "Número no válido.";
+        resultElement.innerHTML = "Número no válido.";
         return;
     }
 
     const number = parseInt(numberInput, fromBase);
     if (isNaN(number)) {
-        resultElement.textContent = "Número no válido.";
+        resultElement.innerHTML = "Número no válido.";
         return;
     }
 
     let convertedNumber = number.toString(toBase).toUpperCase();
 
-    if (toBase === 2) {
-        convertedNumber = convertedNumber.padStart(8, '0');
+    if (convertedNumber.length > 10) {
+        const mid = Math.ceil(convertedNumber.length / 2);
+        convertedNumber = convertedNumber.slice(0, mid) + "<br>" + convertedNumber.slice(mid);
     }
 
-    resultElement.textContent = convertedNumber;
+    resultElement.innerHTML = convertedNumber;
 }
