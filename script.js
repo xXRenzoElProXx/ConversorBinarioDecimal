@@ -61,7 +61,7 @@ function convert() {
 
     let convertedNumber = number.toString(toBase).toUpperCase();
 
-    if (convertedNumber.length > 10) {
+    if (convertedNumber.length > 20) {
         const mid = Math.ceil(convertedNumber.length / 2);
         convertedNumber = convertedNumber.slice(0, mid) + "<br>" + convertedNumber.slice(mid);
     }
