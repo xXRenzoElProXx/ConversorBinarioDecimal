@@ -15,20 +15,22 @@
         <h1>Conversor de Bases</h1>
         <div class="input-group">
             <label for="numberInput">Introduce tu número:</label>
-            <input type="text" id="numberInput" placeholder="Ingrese un número" oninput="filterInput(); convert()" autocomplete="off">
+            <input type="text" id="numberInput" placeholder="Ingrese un número" oninput="filterInput(); convert()"
+                autocomplete="off">
         </div>
-        <div class="input-group">
+        <div class="input-group" style="margin-top: -10px;">
             <label for="fromBase">Escrito en base:</label>
             <select id="fromBase" onchange="updateToBaseOptions(); convert()">
                 <option value="2">Binario (Base 2)</option>
                 <option value="10">Decimal (Base 10)</option>
             </select>
         </div>
-        
+
         <div class="input-group">
             <button type="button" id="swapButton" onclick="swapBases()">
-                <i class="fas fa-arrow-up-down">⮃</i>
+                <i class="fa-solid fa-arrows-up-down"></i>
             </button>
+
         </div>
         <div class="input-group">
             <label for="toBase">Convertir a base:</label>
