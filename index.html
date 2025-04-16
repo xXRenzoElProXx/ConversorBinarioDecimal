@@ -12,36 +12,44 @@
 
 <body>
     <div class="container">
-        <h1>Conversor de Bases</h1>
-        <div class="input-group">
-            <label for="numberInput">Introduce tu número:</label>
-            <input type="text" id="numberInput" placeholder="Ingrese un número" oninput="filterInput(); convert()"
-                autocomplete="off">
+        <div class="header">
+            <h1>Conversor de Bases</h1>
         </div>
-        <div class="input-group" style="margin-top: -10px;">
-            <label for="fromBase">Escrito en base:</label>
-            <select id="fromBase" onchange="updateToBaseOptions(); convert()">
-                <option value="2">Binario (Base 2)</option>
-                <option value="10">Decimal (Base 10)</option>
-            </select>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label for="numberInput">Introduce tu número:</label>
+                <input type="text" id="numberInput" placeholder="Ingrese un número" oninput="filterInput(); convert()" autocomplete="off">
+            </div>
+            
+            <div class="input-group">
+                <label for="fromBase">Escrito en base:</label>
+                <select id="fromBase" onchange="updateToBaseOptions(); convert()">
+                    <option value="2">Binario (Base 2)</option>
+                    <option value="10">Decimal (Base 10)</option>
+                </select>
+            </div>
+
+            <div class="swap-button-container">
+                <button type="button" id="swapButton" onclick="swapBases()">
+                    <i class="fa-solid fa-arrows-up-down"></i>
+                </button>
+            </div>
+
+            <div class="input-group">
+                <label for="toBase">Convertir a base:</label>
+                <select id="toBase" onchange="convert()">
+                    <option value="10">Decimal (Base 10)</option>
+                    <option value="2">Binario (Base 2)</option>
+                </select>
+            </div>
         </div>
 
-        <div class="input-group">
-            <button type="button" id="swapButton" onclick="swapBases()">
-                <i class="fa-solid fa-arrows-up-down"></i>
-            </button>
-
-        </div>
-        <div class="input-group">
-            <label for="toBase">Convertir a base:</label>
-            <select id="toBase" onchange="convert()">
-                <option value="10">Decimal (Base 10)</option>
-                <option value="2">Binario (Base 2)</option>
-            </select>
-        </div>
-        <div class="result-group">
-            <p><strong>Resultado:</strong></p>
-            <p id="result">-</p>
+        <div class="results-section">
+            <div class="result-group">
+                <p>Resultado:</p>
+                <p id="result">-</p>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
